@@ -319,3 +319,11 @@ class InceptionI3d(nn.Module):
             if end_point in self.end_points:
                 x = self._modules[end_point](x)
         return self.avg_pool(x)
+
+
+# if __name__ == '__main__':
+#     model = Unit3D(in_channels=3, output_channels=64, kernel_shape=[7, 7, 7], stride=(2, 2, 2), padding=(3, 3, 3), name='1')
+#
+#     tensor = torch.Tensor(np.zeros((1,3, 256, 224,224), dtype=np.float))
+#     out = model(tensor)
+#     print(out.shape)

@@ -55,7 +55,7 @@ logger = logging.getLogger(__name__)
 # region Load and Dump
 
 def pkl_load(path):
-    with open(path, 'r') as f:
+    with open(path, 'rb') as f:
         data = pkl.load(f)
     return data
 
@@ -111,7 +111,7 @@ def byte_dump(data, path):
         f.write(data)
 
 def pkl_dump(data, path, is_highest=True):
-    with open(path, 'w') as f:
+    with open(path, 'wb') as f:
         if not is_highest:
             pkl.dump(data, f)
         else:
@@ -348,7 +348,7 @@ def calc_num_batches(n_samples, batch_size):
     return n_batch
 
 def convert_dict_to_attrdict(d):
-    for k, v in d.iteritems():
+    for k, v in d.items():
         if isinstance(v, dict):
             v = convert_dict_to_attrdict(v)
             d[k] = v

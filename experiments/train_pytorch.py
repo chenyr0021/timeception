@@ -337,3 +337,18 @@ def __main():
 
 if __name__ == '__main__':
     __main()
+    # import numpy as np
+    # import torch as T
+    # from nets import timeception_pytorch
+    #
+    # # define input tensor
+    # input = T.tensor(np.zeros((32, 1024, 128, 7, 7)), dtype=T.float32)
+    #
+    # # define 4 layers of timeception
+    # module = timeception_pytorch.Timeception(input.size(), n_layers=4)
+    #
+    # # feedforward the input to the timeception layers
+    # tensor = module(input)
+    #
+    # # the output is (32, 2480, 8, 7, 7)
+    # print(tensor.size())

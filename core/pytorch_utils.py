@@ -254,7 +254,8 @@ class ModelSaver():
         self.model_name = model_name
 
         model_root_path = './data/%s/models' % (dataset_name)
-        assert os.path.exists(model_root_path)
+        if not os.path.exists(model_root_path):
+            os.mkdir(model_root_path)
 
         model_root_path = './data/%s/models/%s' % (dataset_name, model_name)
         if not os.path.exists(model_root_path):
